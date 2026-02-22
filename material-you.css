@@ -268,3 +268,13 @@ body {
   font-weight: var(--md-sys-typescale-body-small-weight);
   letter-spacing: var(--md-sys-typescale-body-small-tracking);
 }
+
+/* Color system — utility classes */
+.md-surface { background-color: var(--md-sys-color-surface); color: var(--md-sys-color-on-surface); }
+.md-surface-container { background-color: var(--md-sys-color-surface-container); color: var(--md-sys-color-on-surface); }
+.md-surface-container-low { background-color: var(--md-sys-color-surface-container-low); color: var(--md-sys-color-on-surface); }
+.md-surface-container-high { background-color: var(--md-sys-color-surface-container-high); color: var(--md-sys-color-on-surface); }
+.md-primary { background-color: var(--md-sys-color-primary); color: var(--md-sys-color-on-primary); }
+.md-secondary { background-color: var(--md-sys-color-secondary); color: var(--md-sys-color-on-secondary); }
+.md-tertiary { background-color: var(--md-sys-color-tertiary); color: var(--md-sys-color-on-tertiary); }
+.md-error { background-color: var(--md-sys-color-error); color: var(--md-sys-color-on-error); }
