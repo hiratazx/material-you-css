@@ -47,4 +47,11 @@
   /* Background */
   --md-sys-color-background: #FFFBFE;
   --md-sys-color-on-background: #1C1B1F;
+
+  /* Inverse */
+  --md-sys-color-inverse-surface: #313033;
+  --md-sys-color-inverse-on-surface: #F4EFF4;
+  --md-sys-color-inverse-primary: #D0BCFF;
+  --md-sys-color-scrim: #000000;
+  --md-sys-color-shadow: #000000;
 }
