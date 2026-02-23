@@ -1364,3 +1364,132 @@ body {
   font-size: var(--md-sys-typescale-body-large-size);
   color: var(--md-sys-color-on-surface);
 }
+
+/* Checkbox */
+.md-checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.md-checkbox input[type="checkbox"] {
+  display: none;
+}
+.md-checkbox-box {
+  width: 18px;
+  height: 18px;
+  border-radius: var(--md-sys-shape-corner-extra-small);
+  border: 2px solid var(--md-sys-color-on-surface-variant);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition:
+    background-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    border-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  position: relative;
+}
+.md-checkbox-box::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-checkbox:hover .md-checkbox-box::before { opacity: var(--md-sys-state-hover-opacity); }
+.md-checkbox-check {
+  width: 10px;
+  height: 10px;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  stroke: var(--md-sys-color-on-primary);
+  stroke-width: 2;
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.md-checkbox input:checked ~ .md-checkbox-box {
+  background-color: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+.md-checkbox input:checked ~ .md-checkbox-box .md-checkbox-check {
+  opacity: 1;
+}
+.md-checkbox input:checked ~ .md-checkbox-box::before {
+  background: var(--md-sys-color-primary);
+}
+.md-checkbox input:disabled ~ .md-checkbox-box {
+  opacity: var(--md-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}
+.md-checkbox-label {
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface);
+}
+
+/* Radio button */
+.md-radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.md-radio input[type="radio"] {
+  display: none;
+}
+.md-radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--md-sys-color-on-surface-variant);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: border-color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  position: relative;
+}
+.md-radio-circle::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-radio:hover .md-radio-circle::before { opacity: var(--md-sys-state-hover-opacity); }
+.md-radio-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--md-sys-color-primary);
+  transform: scale(0);
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized-decelerate);
+}
+.md-radio input:checked ~ .md-radio-circle {
+  border-color: var(--md-sys-color-primary);
+}
+.md-radio input:checked ~ .md-radio-circle::before {
+  background: var(--md-sys-color-primary);
+}
+.md-radio input:checked ~ .md-radio-circle .md-radio-dot {
+  transform: scale(1);
+}
+.md-radio input:disabled ~ .md-radio-circle {
+  opacity: var(--md-sys-state-disabled-opacity);
+  cursor: not-allowed;
+}
+.md-radio-label {
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface);
+}
