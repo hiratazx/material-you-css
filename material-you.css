@@ -1571,3 +1571,35 @@ body {
   align-self: stretch;
   flex-shrink: 0;
 }
+
+/* Badges */
+.md-badge-wrapper {
+  position: relative;
+  display: inline-flex;
+}
+
+.md-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+  min-width: 16px;
+  height: 16px;
+  border-radius: var(--md-sys-shape-corner-full);
+  background-color: var(--md-sys-color-error);
+  color: var(--md-sys-color-on-error);
+  font-size: var(--md-sys-typescale-label-small-size);
+  font-weight: var(--md-sys-typescale-label-small-weight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+  line-height: 1;
+}
+
+.md-badge-small {
+  width: 6px;
+  height: 6px;
+  min-width: unset;
+  padding: 0;
+}
