@@ -1908,3 +1908,23 @@ body {
   background-color: var(--md-sys-color-background);
   color: var(--md-sys-color-on-background);
 }
+
+/* Material symbols / icons helper */
+.md-icon {
+  font-family: 'Material Symbols Rounded', 'Material Symbols Outlined', 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  user-select: none;
+  flex-shrink: 0;
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+.md-icon-filled {
+  font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
