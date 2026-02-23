@@ -608,3 +608,74 @@ body {
   border: 1px solid var(--md-sys-color-outline);
   color: var(--md-sys-color-on-surface-variant);
 }
+
+/* Text fields */
+.md-text-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+}
+
+.md-text-field-filled {
+  background-color: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--md-sys-shape-corner-extra-small) var(--md-sys-shape-corner-extra-small) 0 0;
+  overflow: hidden;
+}
+
+.md-text-field input,
+.md-text-field textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface);
+  caret-color: var(--md-sys-color-primary);
+  padding: 24px 16px 8px;
+}
+
+.md-text-field textarea {
+  resize: vertical;
+  min-height: 56px;
+}
+
+.md-text-field label {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: var(--md-sys-typescale-body-large-size);
+  color: var(--md-sys-color-on-surface-variant);
+  pointer-events: none;
+  transition:
+    top var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    font-size var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard),
+    color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.md-text-field textarea ~ label {
+  top: 16px;
+  transform: none;
+}
+
+.md-text-field input:focus ~ label,
+.md-text-field input:not(:placeholder-shown) ~ label,
+.md-text-field textarea:focus ~ label,
+.md-text-field textarea:not(:placeholder-shown) ~ label {
+  top: 8px;
+  transform: none;
+  font-size: var(--md-sys-typescale-body-small-size);
+  color: var(--md-sys-color-primary);
+}
+
+.md-text-field input:not(:focus):not(:placeholder-shown) ~ label,
+.md-text-field textarea:not(:focus):not(:placeholder-shown) ~ label {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+.md-text-field input::placeholder,
+.md-text-field textarea::placeholder {
+  color: transparent;
+}
