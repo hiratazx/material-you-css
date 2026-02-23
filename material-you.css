@@ -800,3 +800,92 @@ body {
   gap: 8px;
   padding: 8px 8px 8px;
 }
+
+/* Chips */
+.md-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: var(--md-sys-shape-corner-small);
+  font-family: inherit;
+  font-size: var(--md-sys-typescale-label-large-size);
+  font-weight: var(--md-sys-typescale-label-large-weight);
+  letter-spacing: var(--md-sys-typescale-label-large-tracking);
+  cursor: pointer;
+  user-select: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+}
+
+.md-chip-assist {
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+}
+.md-chip-assist::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-chip-assist:hover { box-shadow: 0px 1px 2px rgba(0,0,0,0.3), 0px 1px 3px 1px rgba(0,0,0,0.15); }
+.md-chip-assist:hover::after { opacity: var(--md-sys-state-hover-opacity); }
+.md-chip-assist:focus-visible::after { opacity: var(--md-sys-state-focus-opacity); }
+.md-chip-assist:active::after { opacity: var(--md-sys-state-pressed-opacity); transition-duration: var(--md-sys-motion-duration-short1); }
+
+.md-chip-filter {
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+}
+.md-chip-filter.md-chip-selected {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-color: transparent;
+}
+.md-chip-filter::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: currentColor;
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-chip-filter:hover::after { opacity: var(--md-sys-state-hover-opacity); }
+.md-chip-filter:focus-visible::after { opacity: var(--md-sys-state-focus-opacity); }
+.md-chip-filter:active::after { opacity: var(--md-sys-state-pressed-opacity); transition-duration: var(--md-sys-motion-duration-short1); }
+
+.md-chip-input {
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+}
+.md-chip-suggestion {
+  border: 1px solid var(--md-sys-color-outline);
+  color: var(--md-sys-color-on-surface);
+}
+.md-chip-suggestion.md-chip-selected {
+  background-color: var(--md-sys-color-secondary-container);
+  color: var(--md-sys-color-on-secondary-container);
+  border-color: transparent;
+}
+
+.md-chip .md-icon {
+  font-size: 18px;
+  width: 18px;
+  height: 18px;
+}
+.md-chip:disabled {
+  opacity: var(--md-sys-state-disabled-opacity);
+  pointer-events: none;
+}
