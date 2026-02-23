@@ -1603,3 +1603,78 @@ body {
   min-width: unset;
   padding: 0;
 }
+
+/* Lists */
+.md-list {
+  list-style: none;
+  margin: 0;
+  padding: 8px 0;
+}
+
+.md-list-item {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 0 16px;
+  gap: 16px;
+  color: var(--md-sys-color-on-surface);
+  position: relative;
+  overflow: hidden;
+}
+.md-list-item.md-list-item-clickable {
+  cursor: pointer;
+  outline: none;
+  text-decoration: none;
+}
+.md-list-item.md-list-item-clickable::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-list-item.md-list-item-clickable:hover::after { opacity: var(--md-sys-state-hover-opacity); }
+.md-list-item.md-list-item-clickable:focus-visible::after { opacity: var(--md-sys-state-focus-opacity); }
+.md-list-item.md-list-item-clickable:active::after { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-list-item-leading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--md-sys-color-on-surface-variant);
+}
+.md-list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+.md-list-item-headline {
+  font-size: var(--md-sys-typescale-body-large-size);
+  font-weight: var(--md-sys-typescale-body-large-weight);
+  line-height: var(--md-sys-typescale-body-large-line-height);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.md-list-item-supporting {
+  font-size: var(--md-sys-typescale-body-medium-size);
+  color: var(--md-sys-color-on-surface-variant);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.md-list-item-supporting-multi {
+  white-space: normal;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.md-list-item-trailing {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  color: var(--md-sys-color-on-surface-variant);
+  font-size: var(--md-sys-typescale-label-small-size);
+}
