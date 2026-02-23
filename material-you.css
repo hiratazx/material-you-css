@@ -1546,3 +1546,28 @@ body {
   border-radius: 2px;
   background-color: var(--md-sys-color-surface-container-highest);
 }
+
+/* Divider */
+.md-divider {
+  width: 100%;
+  height: 1px;
+  background-color: var(--md-sys-color-outline-variant);
+  border: none;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.md-divider-inset {
+  margin-left: 16px;
+}
+
+.md-divider-middle {
+  margin: 0 16px;
+}
+
+.md-divider-vertical {
+  width: 1px;
+  height: 100%;
+  align-self: stretch;
+  flex-shrink: 0;
+}
