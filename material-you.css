@@ -1735,3 +1735,92 @@ body {
   font-size: var(--md-sys-typescale-label-large-size);
   color: var(--md-sys-color-on-surface-variant);
 }
+
+/* Tabs */
+.md-tabs {
+  display: flex;
+  align-items: flex-end;
+  overflow-x: auto;
+  scrollbar-width: none;
+  position: relative;
+}
+.md-tabs::-webkit-scrollbar { display: none; }
+.md-tabs::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--md-sys-color-surface-container-highest);
+}
+
+.md-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 90px;
+  height: 48px;
+  padding: 0 16px;
+  border: none;
+  background: transparent;
+  color: var(--md-sys-color-on-surface-variant);
+  font-family: inherit;
+  font-size: var(--md-sys-typescale-title-small-size);
+  font-weight: var(--md-sys-typescale-title-small-weight);
+  letter-spacing: var(--md-sys-typescale-title-small-tracking);
+  cursor: pointer;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: color var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  z-index: 1;
+}
+.md-tab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--md-sys-color-on-surface);
+  opacity: 0;
+  transition: opacity var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-standard);
+  pointer-events: none;
+}
+.md-tab:hover::before { opacity: var(--md-sys-state-hover-opacity); }
+.md-tab:focus-visible::before { opacity: var(--md-sys-state-focus-opacity); }
+.md-tab:active::before { opacity: var(--md-sys-state-pressed-opacity); }
+
+.md-tab.md-tab-active {
+  color: var(--md-sys-color-primary);
+}
+.md-tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+  background-color: var(--md-sys-color-primary);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--md-sys-motion-duration-short4) var(--md-sys-motion-easing-emphasized);
+  z-index: 2;
+}
+.md-tab.md-tab-active .md-tab-indicator {
+  transform: scaleX(1);
+}
+
+/* Secondary Tabs */
+.md-tabs-secondary .md-tab {
+  font-size: var(--md-sys-typescale-title-small-size);
+}
+.md-tabs-secondary .md-tab.md-tab-active {
+  color: var(--md-sys-color-on-surface);
+}
+.md-tabs-secondary .md-tab-indicator {
+  background-color: var(--md-sys-color-on-surface);
+}
